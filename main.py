@@ -1,7 +1,3 @@
-# відкриваємо файли для зчитування
-
-f1 = open('file1.txt', 'r')
-f2 = open('file2.txt', 'r')
 
 def readdata(f):
     # зчитуємо вміст файлів
@@ -32,7 +28,21 @@ def writeinfile(file1, file2):
         file2.write(line)
     file2.close()
 
+f1 = open('file1.txt', 'r')
+f2 = open('file2.txt', 'r')
 
-    # зчитуємо вміст файлів
 f1_lines = readdata(f1)
 f2_lines = readdata(f2)
+
+same_fil = same(f1_lines, f2_lines)
+
+diff_fil = diff(f1_lines, f2_lines)
+
+same_file = open('same.txt', 'w')
+diff_file = open('diff.txt', 'w')
+
+writeinfile(same_fil, same_file)
+writeinfile(diff_fil, diff_file)
+
+f1.close()
+f2.close()
