@@ -27,6 +27,11 @@ def diff(f1, f2):  # знаходимо рядки, які містяться л
             diff_lines.append(line)
     return diff_lines
 
+def writeinfile(file1, file2):
+    for line in file1:
+        file2.write(line)
+    file2.close()
+
 
     # зчитуємо вміст файлів
 f1_lines = readdata(f1)
