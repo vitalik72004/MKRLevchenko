@@ -9,3 +9,15 @@ def readdata(f):
     for line in f:
         f_lines.append(line)
     return f_lines
+
+def same(f1, f2):
+    same_lines = []
+    for line in f1:
+        if line in f2:
+            same_lines.append(line)
+    return same_lines
+
+
+    # зчитуємо вміст файлів
+f1_lines = readdata(f1)
+f2_lines = readdata(f2)
