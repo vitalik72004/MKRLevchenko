@@ -17,6 +17,16 @@ def same(f1, f2):
             same_lines.append(line)
     return same_lines
 
+def diff(f1, f2):  # знаходимо рядки, які містяться лише в одному з файлів
+    diff_lines = []
+    for line in f1:
+        if line not in f2:
+            diff_lines.append(line)
+    for line in f2:
+        if line not in f1:
+            diff_lines.append(line)
+    return diff_lines
+
 
     # зчитуємо вміст файлів
 f1_lines = readdata(f1)
